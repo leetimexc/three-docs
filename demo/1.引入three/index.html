@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+      <script src="./build/three.js"></script>
+      <script>
+        1. 引入方式1
+        console.log(THREE.Scene)
+      </script>
+    -->
+    <script type="module">
+      // 2. 引入方式2
+      import * as THREE from './build/three.module.js'
+      console.log(THREE.Scene)
+    </script>
+  </body>
+</html>
