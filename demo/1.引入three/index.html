@@ -9,32 +9,29 @@
     <!-- 
       <script src="./build/three.js"></script>
       <script>
-        1. 引入方式1
+        1. 引入方式1：script标签引入
         console.log(THREE.Scene)
       </script>
     -->
     <!-- <script type="module">
-      // 2. 引入方式2
+      // 2. 引入方式2：import方式
       import * as THREE from './build/three.module.js'
       console.log(THREE.Scene)
     </script> -->
     <!-- 3.第三张引入方式 扩展库引入: 让学习环境.html文件，也能和vue或react开发环境中一样方式方式引入threejs扩展库 -->
+    <!-- 模拟npm安装的写法 -->
     <script type="importmap">
       {
         "imports": {
-          "three": "./build/three.module.js",
-          "three/addons/": "../../three.js-r148/examples/jsm/"
+          "three": "./build/three.module.js"
         }
       }
     </script>
     <script type="module">
-      // three/addons/路径之后对应的是three.js官方文件包`/examples/jsm/`中的js库
-      // 扩展库OrbitControls.js
-      import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
-      // 扩展库GLTFLoader.js
-      import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
-      console.log(OrbitControls)
-      console.log(GLTFLoader)
+      import * as THREE from 'three' // "three" 对应的值是 "./build/three.module.js" 和上面一一对应
+      console.log(THREE.Scene)
+      import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+      console.log('OrbitControls', OrbitControls)
     </script>
   </body>
 </html>
