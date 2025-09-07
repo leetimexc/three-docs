@@ -23,11 +23,11 @@ const camera = new THREE.PerspectiveCamera(30,width/height,0.1,3000)
 camera.position.set(200,200,200)
 
 // 设置相机的观察目标
-// camera.lookAt(0,0,0) // 坐标原点
-camera.lookAt(mesh.position) // 指向网格模型
+camera.lookAt(0,0,0) // 坐标原点
+// camera.lookAt(mesh.position) // 指向网格模型
 
 // 创建渲染器
-// const renderer = new THREE.WebGLRenderer()
-// renderer.setSize(width,height)
-// renderer.render(scene,camera)
-// document.body.appendChild(renderer.domElement)
+const renderer = new THREE.WebGLRenderer()
+renderer.setSize(width,height)
+renderer.render(scene,camera)
+document.body.appendChild(renderer.domElement)
