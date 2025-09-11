@@ -17,6 +17,7 @@ scene.add(camera);
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
+
 // 4.添加相机控件
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.addEventListener('change', function () {
