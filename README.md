@@ -8,3 +8,5 @@
 
 3D 第一步：
 场景 Scene、相机 Camera、渲染器 Renderer 三个概念。
+
+材质、形状
