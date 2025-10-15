@@ -8,16 +8,26 @@ const vertices = new Float32Array([
     0, 0, 0, //顶点1坐标
     80, 0, 0, //顶点2坐标
     80, 80, 0, //顶点3坐标
-    0, 0, 0, //顶点4坐标   和顶点1位置相同
-    80, 80, 0, //顶点5坐标  和顶点3位置相同
-    0, 80, 0, //顶点6坐标
+    // 0, 0, 0, //顶点4坐标   和顶点1位置相同
+    // 80, 80, 0, //顶点5坐标  和顶点3位置相同
+    0, 80, 0, //顶点6坐标  // 改成4坐标
 ]);
 
 // 创建几何体对象
 const geometry = new THREE.BufferGeometry();
 // 设置几何体顶点位置数据
 geometry.setAttribute('position', new THREE.BufferAttribute(vertices, 3));
+// Uint16Array类型数组创建顶点索引数据
+const indexes = new Uint16Array([
+    // 下面索引值对应顶点位置数据中的顶点坐标
+    0, 1, 2, // 第一个三角形：顶点1, 顶点2, 顶点3
+    0, 2, 3, // 第二个三角形：顶点1, 顶点3, 顶点4
+])
+// 索引数据赋值给几何体的index属性
+geometry.index = new THREE.BufferAttribute(indexes, 1); //1个为一组
 
+
+console.log('xxxx', geometry)
 // 创建材质对象
 const material = new THREE.MeshBasicMaterial({
     color: 0x0000ff, // 蓝色
